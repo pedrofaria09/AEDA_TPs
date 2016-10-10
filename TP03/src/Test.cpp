@@ -6,13 +6,13 @@
 #include "grafo.h"
 
 void test_a_ConstrutorNosArestas() {
-	/*Grafo<string,int> g;
+	Grafo<string,int> g;
 	ASSERT_EQUAL(0, g.numNos());
-	ASSERT_EQUAL(0, g.numArestas());*/
+	ASSERT_EQUAL(0, g.numArestas());
 }
 
 void test_b_InserirNo() {
-	/*Grafo<string,int> f;
+	Grafo<string,int> f;
 	f.inserirNo("A");
 	f.inserirNo("B");
 	f.inserirNo("C");
@@ -30,11 +30,11 @@ void test_b_InserirNo() {
 	}
 	f.inserirNo("D");
 	f.inserirNo("E");
-	ASSERT_EQUAL(5, f.numNos());*/
+	ASSERT_EQUAL(5, f.numNos());
 }
 
 void test_c_InserirAresta() {
-	/*Grafo<string,int> f;
+	Grafo<string,int> f;
 	f.inserirNo("A");
 	f.inserirNo("B");
 	f.inserirNo("C");
@@ -70,11 +70,11 @@ void test_c_InserirAresta() {
 		ASSERT_EQUAL(str1, ostr1.str());
 	}
 
-	ASSERT_EQUAL(7, f.numArestas());*/
+	ASSERT_EQUAL(7, f.numArestas());
 }
 
 void test_d_ValorAresta() {
-	/*Grafo<string,int> f;
+	Grafo<string,int> f;
 	f.inserirNo("A");
 	f.inserirNo("B");
 	f.inserirNo("C");
@@ -111,11 +111,11 @@ void test_d_ValorAresta() {
 		ostr1 << e;
 		string str1 = "No inexistente: F";
 		ASSERT_EQUAL(str1, ostr1.str());
-	}*/
+	}
 }
 
 void test_e_EliminarAresta() {
-	/*Grafo<string,int> f;
+	Grafo<string,int> f;
 	f.inserirNo("A");
 	f.inserirNo("B");
 	f.inserirNo("C");
@@ -155,11 +155,11 @@ void test_e_EliminarAresta() {
 		ASSERT_EQUAL(str1, ostr1.str());
 	}
 
-	ASSERT_EQUAL(6, f.numArestas());*/
+	ASSERT_EQUAL(6, f.numArestas());
 }
 
 void test_f_ImprimirGrafo() {
-	/*Grafo<string,int> f;
+	Grafo<string,int> f;
 	f.inserirNo("A");
 	f.inserirNo("B");
 	f.inserirNo("C");
@@ -178,11 +178,11 @@ void test_f_ImprimirGrafo() {
 	string str = "( A[ B 5] [ C 8] ) ( B[ D 9] ) ( C[ D 3] [ E 4] ) ( D[ E 2] [ B 11] ) ( E) ";
 	cout << str.c_str()<<endl;
 	ASSERT_EQUAL(str, ostr.str());
-*/
+
 }
 
 void test_g_OperadorSaida() {
-/*	Grafo<string,int> f;
+	Grafo<string,int> f;
 	f.inserirNo("A");
 	f.inserirNo("B");
 	f.inserirNo("C");
@@ -199,7 +199,7 @@ void test_g_OperadorSaida() {
 	ostringstream ostr;
 	ostr << f;
 	string str = "( A[ B 5] [ C 8] ) ( B[ D 9] ) ( C[ D 3] [ E 4] ) ( D[ E 2] [ B 11] ) ( E) ";
-	ASSERT_EQUAL(str, ostr.str());*/
+	ASSERT_EQUAL(str, ostr.str());
 }
 
 void runSuite(){
