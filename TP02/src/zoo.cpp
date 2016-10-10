@@ -186,4 +186,5 @@ bool Zoo::operator < (Zoo& zoo2) const{
 	if(soma1<soma2)
 		return true;
 	return false;
+	
 }
