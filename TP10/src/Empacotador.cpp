@@ -119,13 +119,12 @@ Caixa MaquinaEmpacotar::caixaMaisObjetos() const {
 
 	priority_queue<Caixa> backupCaixa = caixas;
 
-	if(caixas.empty()) {
+	if (caixas.empty()) {
 		throw MaquinaSemCaixas();
 	}
 
-	while(!backupCaixa.empty()){
-
-		if(backupCaixa.top().getSize() > nrObjetos){
+	while (!backupCaixa.empty()) {
+		if (backupCaixa.top().getSize() > nrObjetos) {
 			cx = backupCaixa.top();
 			nrObjetos = cx.getSize();
 		}

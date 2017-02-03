@@ -30,13 +30,43 @@ void Dicionario::lerDicionario(ifstream &fich) {
 string Dicionario::consulta(string palavra) const {
 	BSTItrIn<PalavraSignificado> it(palavras);
 	string aux;
-	while(!it.isAtEnd()){
-		if(it.retrieve().getPalavra() == palavra)
+	string palavraAntes;
+	string significadoAntes;
+	string palavraApos;
+	string significadoApos;
+	bool found = 0;
+
+	while (!it.isAtEnd()) {
+
+		if (it.retrieve().getPalavra() == palavra) {
 			aux = it.retrieve().getSignificado();
-		it.advance();
+			found = 1;
+			break;
+		}
+		if (it.retrieve().getPalavra() < palavra) {
+			palavraAntes = it.retrieve().getPalavra();
+			significadoAntes = it.retrieve().getSignificado();
+			it.advance();
+			if (!it.isAtEnd()){
+				palavraApos = it.retrieve().getPalavra();
+				significadoApos = it.retrieve().getSignificado();
+			}else{
+				palavraApos = "";
+				significadoApos = "";
+			}
+		} else {
+			it.advance();
+		}
 	}
-	if(aux.length() != 0)
+	
+	if (aux.length() > 0) {
 		return aux;
+	}
+
+	if (!found && aux.length() == 0) {
+		throw PalavraNaoExiste(palavraAntes, significadoAntes, palavraApos,
+				significadoApos);
+	}
 }
 
 bool Dicionario::corrige(string palavra, string significado) {
